@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BusinessObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessObjects;
-namespace DataAccessObjects
+
+namespace DataAccessLayer
 {
     public class CategoryDAO
     {
@@ -19,23 +20,23 @@ namespace DataAccessObjects
             Category produce = new Category(7, "Produce");
             Category seafood = new Category(8, "Seafood");
 
-            var listCategoris = new List<Category>();
+            var listCategories = new List<Category>();
             try
             {
-                listCategoris.Add(beverages);
-                listCategoris.Add(condiments);
-                listCategoris.Add(confections);
-                listCategoris.Add(dairy);
-                listCategoris.Add(grains);
-                listCategoris.Add(meat);
-                listCategoris.Add(produce);
-                listCategoris.Add(seafood);
+                listCategories.Add(beverages);
+                listCategories.Add(condiments);
+                listCategories.Add(confections);
+                listCategories.Add(dairy);
+                listCategories.Add(grains);
+                listCategories.Add(meat);
+                listCategories.Add(produce);
+                listCategories.Add(seafood);
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
             }
-            return listCategoris;
+            return listCategories;
         }
     }
 }

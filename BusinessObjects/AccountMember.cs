@@ -8,10 +8,11 @@ namespace BusinessObjects
 {
     public partial class AccountMember
     {
-        public string memberId { get; set; }
-        public string memberPassword { get; set; }
-        public string fullName { get; set; }
-        public string? emailAddress { get; set; }
-        public int? memberRole { get; set; }
+        public string MemberId { get; set; } = null;
+        public string MemberPassword { get; set; } = null;
+
+        public string FullName { get; set; } = null;
+        public string? EmailAddress { get; set; }
+        public int? MemberRole { get; set; }
     }
 }

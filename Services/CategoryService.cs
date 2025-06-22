@@ -8,18 +8,16 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public class CategoryService : ICatergoryService
+    public class CategoryService : ICategoryService
     {
-        private readonly ICategoryRepository icategoryRepository;
+        private readonly ICategoryRepositorycs icategoryRepository;
         public CategoryService()
         {
-            icategoryRepository = new CategoryRepository();
+            icategoryRepository = new CategoryRepository(); // Assuming CategoryRepository implements ICategoryRepository
         }
-
         public List<Category> GetCategories()
         {
             return icategoryRepository.GetCategories();
-
         }
     }
 }

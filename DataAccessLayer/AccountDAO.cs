@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessObjects
+namespace DataAccessLayer
 {
     public class AccountDAO
     {
         public static AccountMember GetAccountById(string accountID)
         {
             AccountMember accountMember = new AccountMember();
-            if (accountID.Equals("PS0001"))
+            if (accountID.Equals("PSS0001")) // just for demonstration
             {
-                accountMember.memberId = accountID;
-                accountMember.memberPassword = "@1";
-                accountMember.memberRole = 1;
+                accountMember.MemberId = accountID;
+                accountMember.MemberPassword = "@1";
+                accountMember.MemberRole = 1;
             }
             return accountMember;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,24 +10,28 @@ namespace BusinessObjects
     public partial class Product
     {
         public Product(int id, string name, int catId,
-            short unitInStock, decimal price)
+                short unitInStock, decimal price)
         {
-            this.productId = id;
-            this.productName = name;
-            this.categoryId = catId;
-            this.unitsInStock = unitInStock;
-            this.untiPrice = price; 
+            this.ProductId = id;
+            this.ProductName = name;
+            this.CategoryId = catId;
+            this.UnitsInStock = unitInStock;
+            this.UnitPrice = price;
+
+        }
+        public Product()
+        {
+            // Default constructor for Entity Framework
         }
 
-        public int productId { get; set; }
-        public string productName { get; set; }
-        public int? categoryId { get; set; }
-        public short? unitsInStock { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
 
-        public decimal? untiPrice { get; set; }
+        public int? CategoryId { get; set; }
+
+        public short? UnitsInStock { get; set; }
+        public decimal? UnitPrice { get; set; }
 
         public virtual Category Category { get; set; }
-
     }
-
 }

@@ -9,18 +9,17 @@ using System.Threading.Tasks;
 namespace Services
 {
     public class ProductService : IProductService
-
     {
         private readonly IProductRepository iProductRepository;
 
-        public ProductService()
+        public void DeleteProduct(Product product)
         {
-            iProductRepository = new ProductRepository();
+            iProductRepository.DeleteProduct(product);
         }
 
-        public void DeleteProduct(Product p)
+        public List<Product> GetProduct()
         {
-            iProductRepository.DeleteProduct(p);
+            return iProductRepository.GetProduct();
         }
 
         public Product GetProductById(int id)
@@ -28,21 +27,14 @@ namespace Services
             return iProductRepository.GetProductById(id);
         }
 
-        public List<Product> GetProducts()
-        {
-            return iProductRepository.GetProducts();
-        }
-
         public void SaveProduct(Product p)
         {
-            iProductRepository.SaveProduct(p);
+          iProductRepository.SaveProduct(p);
         }
 
-        public void UpdateProduct(Product p)
+        public void UpdateProduct(Product product)
         {
-            iProductRepository.UpdateProduct(p);
+           iProductRepository.UpdateProduct(product);
         }
-
-       
     }
 }

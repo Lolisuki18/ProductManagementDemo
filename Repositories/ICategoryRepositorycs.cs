@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface IAccountRepository
+    public interface ICategoryRepositorycs
     {
-        AccountMember GetAccountById(string accountId);
+       List<Category> GetCategories();
     }
 }

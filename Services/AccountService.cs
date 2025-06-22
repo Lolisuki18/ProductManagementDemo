@@ -10,16 +10,10 @@ namespace Services
 {
     public class AccountService : IAccountService
     {
-        private readonly IAccountRepository iAccountRepository;
-
-        public AccountService()
+        private readonly IAccountRepositorycs iAccountRepository;
+        public AccountMember GetAccountById(string accountID)
         {
-            iAccountRepository = new AccountRepository();
-        }
-
-        public AccountMember GetAccountById(string accountId)
-        {
-            return iAccountRepository.GetAccountById(accountId);
+            return iAccountRepository.GetAccountById(accountID);
         }
     }
 }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Services
 {
-    public interface  IAccountService
+    public interface IAccountService
     {
-        AccountMember GetAccountById(String accountId);
+        AccountMember GetAccountById(string accountID);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using BusinessObjects;
-using DataAccessObjects;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +10,16 @@ namespace Repositories
 {
     public class ProductRepository : IProductRepository
     {
+        private readonly ProductDAO _productDAO = new ProductDAO();
 
-        public void SaveProduct(Product product) => ProductDAO.saveProduct(product);
-        
-            
-      
-        public void DeleteProduct(Product p) => ProductDAO.deleteProduct(p);
-        
-        public void UpdateProduct(Product p) => ProductDAO.updateProduct(p);
+        public void DeleteProduct(Product product) => _productDAO.DeleteProduct(product);
 
-        public List<Product> GetProducts() => ProductDAO.GetProducts();
+        public List<Product> GetProduct() => _productDAO.GetProduct(); // vẫn gọi static
 
-        public Product GetProductById(int id) => ProductDAO.GetProductById(id);
+        public Product GetProductById(int id) => _productDAO.GetProductById(id);
 
-    }
-    {
+        public void SaveProduct(Product p) => _productDAO.SaveProduct(p);
+
+        public void UpdateProduct(Product product) => _productDAO.UpdateProduct(product);
     }
 }

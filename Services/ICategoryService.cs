@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories
+namespace Services
 {
-    public interface ICategoryRepository
+    public interface ICategoryService
     {
         List<Category> GetCategories();
     }

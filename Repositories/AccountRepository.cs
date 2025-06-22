@@ -1,5 +1,5 @@
 ﻿using BusinessObjects;
-using DataAccessObjects;
+using DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class AccountRepository : IAccountRepository
+    public class AccountRepository : IAccountRepositorycs
     {
-        public AccountMember GetAccountById(string accountId)
-        => AccountDAO.GetAccountById(accountId);
-
+        public AccountMember GetAccountById(string accountID)
+        {
+            return AccountDAO.GetAccountById(accountID);
+        }
     }
-
-
 }

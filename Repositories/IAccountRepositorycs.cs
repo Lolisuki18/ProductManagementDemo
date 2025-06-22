@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services
+namespace Repositories
 {
-    public interface ICatergoryService
+    public interface IAccountRepositorycs
     {
-        List<Category> GetCategories();
-       
+        AccountMember GetAccountById(string accountID);
     }
 }
