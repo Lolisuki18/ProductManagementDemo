@@ -29,6 +29,10 @@ namespace DataAccessLayer
             // listProducts = new List<Product> { chai, chang, aniseed, chef, chefMix, grandma, uncle, northwoods, mishi, ikura };
         }
 
+        public List<Product> GetProduct()
+        {
+            return ProductDAO.listProducts;
+        }
         //public static List<Product> GetProduct()
         //{
         //    var listProducts = new List<Product>();

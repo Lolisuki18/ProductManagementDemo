@@ -27,10 +27,10 @@ namespace WPFApp
             InitializeComponent();
             iAccountService = new AccountService();
         }
-        private void btnLogin_Click(object sender, RoutedEventArgs)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             AccountMember account = iAccountService.GetAccountById(txtUser.Text);
-            if(account != null && account.MemberPassword.Equals(txtPass.Password)
+            if (account != null && account.MemberPassword.Equals(txtPass.Password)
                 && account.MemberRole == 1)
             {
                 this.Hide();
@@ -41,6 +41,11 @@ namespace WPFApp
             {
                 MessageBox.Show("You are not permission!");
             }
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
