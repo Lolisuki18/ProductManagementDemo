@@ -15,6 +15,7 @@ namespace Services
         {
             icategoryRepository = new CategoryRepository(); // Assuming CategoryRepository implements ICategoryRepository
         }
+
         public List<Category> GetCategories()
         {
             return icategoryRepository.GetCategories();

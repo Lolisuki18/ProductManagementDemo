@@ -12,6 +12,10 @@ namespace Services
     {
         private readonly IProductRepository iProductRepository;
 
+        public ProductService()
+        {
+            iProductRepository = new ProductRepository(); // 👈 Quan trọng
+        }
         public void DeleteProduct(Product product)
         {
             iProductRepository.DeleteProduct(product);

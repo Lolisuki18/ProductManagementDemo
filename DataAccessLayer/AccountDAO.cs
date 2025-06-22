@@ -9,16 +9,21 @@ namespace DataAccessLayer
 {
     public class AccountDAO
     {
-        public static AccountMember GetAccountById(string accountID)
+        public static AccountMember? GetAccountById(string accountID)
         {
-            AccountMember accountMember = new AccountMember();
-            if (accountID.Equals("PSS0001")) // just for demonstration
+            if (accountID == "PSS0001")
             {
-                accountMember.MemberId = accountID;
-                accountMember.MemberPassword = "@1";
-                accountMember.MemberRole = 1;
+                return new AccountMember
+                {
+                    MemberId = "PSS0001",
+                    MemberPassword = "@1",
+                    FullName = "Admin",
+                    EmailAddress = "admin@example.com",
+                    MemberRole = 1
+                };
             }
-            return accountMember;
+
+            return null;
         }
     }
 }

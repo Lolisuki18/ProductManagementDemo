@@ -29,17 +29,33 @@ namespace WPFApp
         }
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            AccountMember account = iAccountService.GetAccountById(txtUser.Text);
-            if (account != null && account.MemberPassword.Equals(txtPass.Password)
-                && account.MemberRole == 1)
+            try
             {
-                this.Hide();
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                string username = txtUser.Text;
+                string password = txtPass.Password;
+
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Username and password are required!", "Login Error");
+                    return;
+                }
+
+                var account = iAccountService.GetAccountById(username);
+
+                if (account != null && account.MemberPassword.Equals(password))
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password!", "Login Error");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("You are not permission!");
+                MessageBox.Show($"Login failed: {ex.Message}", "Error");
             }
         }
 

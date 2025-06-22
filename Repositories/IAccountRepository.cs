@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface IAccountRepositorycs
+    public interface IAccountRepository
     {
         AccountMember GetAccountById(string accountID);
     }

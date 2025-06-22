@@ -8,11 +8,22 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class AccountRepository : IAccountRepositorycs
+    public class AccountRepository : IAccountRepository
     {
-        public AccountMember GetAccountById(string accountID)
+        private readonly AccountDAO accountDAO;
+
+        public AccountRepository()
         {
-            return AccountDAO.GetAccountById(accountID);
+            accountDAO = new AccountDAO();
+        }
+
+        public AccountMember GetAccountById(string accountId)
+        {
+            if (string.IsNullOrEmpty(accountId))
+            {
+                throw new ArgumentNullException(nameof(accountId));
+            }
+            return AccountDAO.GetAccountById(accountId);
         }
     }
 }

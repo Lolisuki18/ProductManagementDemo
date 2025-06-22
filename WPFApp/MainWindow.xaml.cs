@@ -47,11 +47,22 @@ namespace WPFApp
             try
             {
                 var productList = iProductService.GetProduct();
+                var categoryList = iCategoryService.GetCategories();
+                foreach(var product in productList)
+                {
+                    //Gán categoryName cho mỗi product từ categoryList
+                    var category = categoryList.FirstOrDefault(c => c.CategoryId == product.CategoryId);
+                    if(category != null)
+                    {
+                        product.Category = category;
+                    }
+                }
+                dgData.ItemsSource = null;
                 dgData.ItemsSource = productList;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message, "Error on load list of products");
+                MessageBox.Show(ex.Message, "Error on load list of products");
             }
             finally
             {
@@ -88,18 +99,17 @@ namespace WPFApp
 
         private void dgData_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          DataGrid dataGrid = sender as DataGrid;
-            DataGridRow row = (DataGridRow)dataGrid.ItemContainerGenerator.ContainerFromItem(dataGrid.SelectedIndex);
-            DataGridCell RowColumn = dataGrid.Columns[0].GetCellContent(row).Parent as DataGridCell;
-            string id = ((TextBlock)RowColumn.Content).Text;
-            Product product = iProductService.GetProductById(Int32.Parse(id));
-            txtProductID.Text = product.ProductId.ToString();
-            txtProductName.Text = product.ProductName;
-            txtPrice.Text = product.UnitPrice.ToString();
-            txtUnitsInStock.Text = product.UnitsInStock.ToString();
-            cboCategory.SelectedValue = product.CategoryId;
+            // Kiểm tra SelectedItem có phải là Product không
+            if (dgData.SelectedItem is Product selectedProduct)
+            {
+                // Gán dữ liệu lên form, xử lý null an toàn
+                txtProductID.Text = selectedProduct.ProductId.ToString();
+                txtProductName.Text = selectedProduct.ProductName ?? "";
+                txtPrice.Text = selectedProduct.UnitPrice?.ToString() ?? "0";
+                txtUnitsInStock.Text = selectedProduct.UnitsInStock?.ToString() ?? "0";
+                cboCategory.SelectedValue = selectedProduct.CategoryId ?? 0;
+            }
         }
-
         public void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

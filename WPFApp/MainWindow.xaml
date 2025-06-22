@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
-        Title="Lê Nguyễn An Ninh- SE181799 - MainWindow - ProductManagement" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Loaded="Window_Loaded"
+        Title="Lê Nguyễn An Ninh- SE181799 - MainWindow - ProductManagement" Height="500" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid>
             <Grid.Background>
@@ -52,12 +53,12 @@
             <ComboBox x:Name="cboCategory" Margin ="4,4,4,4" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" />
 
 
-            <DataGrid x:Name="dgData" Margin ="4,4,4,63" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" SelectionChanged="dgData_SelectionChanged" />
-            <Button  x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="29,365,0,16" Grid.Row="6" Grid.RowSpan="2" Width="121"  Background="#FF0099FF" BorderBrush="White" Foreground="White" Grid.ColumnSpan="3" Grid.Column="1" Click="btnCreate_Click"/>
-            <Button x:Name="btnUpdate" Content="Update" Grid.Column="3" HorizontalAlignment="Left" Margin="87,365,0,16" Grid.Row="6" Width="118" Background="#FF1B7140" Foreground="White" Grid.RowSpan="2" RenderTransformOrigin="0.37,0.2" Click="btnUpdate_Click"/>
-            <Button x:Name="btnDelete" Content="Delete" Grid.Column="3" HorizontalAlignment="Left" Margin="221,365,0,16" Grid.Row="6" Grid.RowSpan="2" Width="127" Foreground="White" Background="#FFA2AA3D" Click="btnDelete_Click"/>
+            <DataGrid x:Name="dgData" AutoGenerateColumns="True" Margin ="4,4,4,63" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" SelectionChanged="dgData_SelectionChanged" />
+            <Button  x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="16,227,0,0" Grid.Row="6" Grid.RowSpan="2" Width="131"  Background="#FF0099FF" BorderBrush="White" Foreground="White" Grid.ColumnSpan="3" Click="btnCreate_Click" Grid.Column="1"/>
+            <Button x:Name="btnUpdate" Content="Update" Grid.Column="3" HorizontalAlignment="Left" Margin="100,227,0,0" Grid.Row="6" Width="168" Background="#FF1B7140" Foreground="White" Grid.RowSpan="2" RenderTransformOrigin="0.37,0.2" Click="btnUpdate_Click"/>
+            <Button x:Name="btnDelete" Content="Delete" Grid.Column="3" HorizontalAlignment="Left" Margin="297,227,0,0" Grid.Row="6" Grid.RowSpan="2" Width="120" Foreground="White" Background="#FFA2AA3D" Click="btnDelete_Click"/>
 
-            <Button x:Name="btnClose" Content="Close" Grid.Column="3" HorizontalAlignment="Left" Margin="371,365,0,18" Grid.Row="6" Grid.RowSpan="2" Width="120" Background="#FFEF8F18" Foreground="White" Click="btnClose_Click"/>
+            <Button x:Name="btnClose" Content="Close" Grid.Column="3" HorizontalAlignment="Left" Margin="443,227,0,0" Grid.Row="6" Grid.RowSpan="2" Width="119" Background="#FFEF8F18" Foreground="White" Click="btnClose_Click"/>
         </Grid>
     </Grid>
 </Window>

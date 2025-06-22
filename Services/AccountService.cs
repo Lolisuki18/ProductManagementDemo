@@ -10,10 +10,24 @@ namespace Services
 {
     public class AccountService : IAccountService
     {
-        private readonly IAccountRepositorycs iAccountRepository;
+        private readonly IAccountRepository iAccountRepository;
+
+        public AccountService()
+        {
+            iAccountRepository = new AccountRepository(); 
+        }
         public AccountMember GetAccountById(string accountID)
         {
-            return iAccountRepository.GetAccountById(accountID);
+            if (string.IsNullOrEmpty(accountID))
+            {
+                throw new ArgumentException(nameof(accountID));
+            }
+            var account = iAccountRepository.GetAccountById(accountID);
+            if(account == null)
+            {
+                throw new Exception("Account not found");
+            }
+            return account;
         }
     }
 }

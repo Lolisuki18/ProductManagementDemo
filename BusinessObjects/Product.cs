@@ -17,7 +17,7 @@ namespace BusinessObjects
             this.CategoryId = catId;
             this.UnitsInStock = unitInStock;
             this.UnitPrice = price;
-
+            
         }
         public Product()
         {
@@ -25,13 +25,13 @@ namespace BusinessObjects
         }
 
         public int ProductId { get; set; }
-        public string ProductName { get; set; }
+        public string? ProductName { get; set; }
 
         public int? CategoryId { get; set; }
 
         public short? UnitsInStock { get; set; }
         public decimal? UnitPrice { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual Category? Category { get; set; }
     }
 }
