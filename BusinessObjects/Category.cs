@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BusinessObjects
+namespace BusinessObjects;
+
+public partial class Category
 {
-    public partial class Category
+    public Category(int id, string name)
     {
-        public Category()
-        {
-            Products = new HashSet<Product>();
-        }
-
-        public Category(int catID, string catName)
-        {
-            this.CategoryId = catID;
-            this.CategoryName = catName;  
-        }
-        public int CategoryId { get; set; }
-        public string CategoryName { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        CategoryId = id;
+        CategoryName = name;
     }
+
+    public Category() { }
+    public int CategoryId { get; set; }
+
+    public string CategoryName { get; set; } = null!;
+
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

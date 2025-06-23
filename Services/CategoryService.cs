@@ -10,7 +10,7 @@ namespace Services
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoryRepositorycs icategoryRepository;
+        private readonly ICategoryRepository icategoryRepository;
         public CategoryService()
         {
             icategoryRepository = new CategoryRepository(); // Assuming CategoryRepository implements ICategoryRepository

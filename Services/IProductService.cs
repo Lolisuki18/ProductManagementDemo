@@ -10,8 +10,8 @@ namespace Services
     public interface IProductService
     {
 
-        List<Product> GetProduct();
-        void SaveProduct(Product p);
+        List<Product> GetProducts();
+        void SaveProduct(Product product);
         void UpdateProduct(Product product);
         void DeleteProduct(Product product);
         Product GetProductById(int id);

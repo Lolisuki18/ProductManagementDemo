@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class CategoryRepository : ICategoryRepositorycs
+    public class CategoryRepository : ICategoryRepository
     {
         public List<Category> GetCategories()
         {

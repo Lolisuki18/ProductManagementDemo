@@ -46,7 +46,7 @@ namespace WPFApp
         {
             try
             {
-                var productList = iProductService.GetProduct();
+                var productList = iProductService.GetProducts();
                 var categoryList = iCategoryService.GetCategories();
                 foreach(var product in productList)
                 {
@@ -107,7 +107,7 @@ namespace WPFApp
                 txtProductName.Text = selectedProduct.ProductName ?? "";
                 txtPrice.Text = selectedProduct.UnitPrice?.ToString() ?? "0";
                 txtUnitsInStock.Text = selectedProduct.UnitsInStock?.ToString() ?? "0";
-                cboCategory.SelectedValue = selectedProduct.CategoryId ?? 0;
+                cboCategory.SelectedValue = selectedProduct.CategoryId;
             }
         }
         public void btnClose_Click(object sender, RoutedEventArgs e)

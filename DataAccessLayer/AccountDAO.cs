@@ -11,19 +11,9 @@ namespace DataAccessLayer
     {
         public static AccountMember? GetAccountById(string accountID)
         {
-            if (accountID == "PSS0001")
-            {
-                return new AccountMember
-                {
-                    MemberId = "PSS0001",
-                    MemberPassword = "@1",
-                    FullName = "Admin",
-                    EmailAddress = "admin@example.com",
-                    MemberRole = 1
-                };
-            }
+            using var db = new MyStoreContext();
+            return db.AccountMembers.FirstOrDefault(c => c.MemberId.Equals(accountID));
 
-            return null;
         }
     }
 }

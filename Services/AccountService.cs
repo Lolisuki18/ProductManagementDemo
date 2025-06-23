@@ -18,16 +18,7 @@ namespace Services
         }
         public AccountMember GetAccountById(string accountID)
         {
-            if (string.IsNullOrEmpty(accountID))
-            {
-                throw new ArgumentException(nameof(accountID));
-            }
-            var account = iAccountRepository.GetAccountById(accountID);
-            if(account == null)
-            {
-                throw new Exception("Account not found");
-            }
-            return account;
+            return iAccountRepository.GetAccountById(accountID);
         }
     }
 }

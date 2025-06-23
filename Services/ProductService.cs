@@ -14,16 +14,16 @@ namespace Services
 
         public ProductService()
         {
-            iProductRepository = new ProductRepository(); // 👈 Quan trọng
+            iProductRepository = new ProductRepository();
         }
         public void DeleteProduct(Product product)
         {
             iProductRepository.DeleteProduct(product);
         }
 
-        public List<Product> GetProduct()
+        public List<Product> GetProducts()
         {
-            return iProductRepository.GetProduct();
+            return iProductRepository.GetProducts();
         }
 
         public Product GetProductById(int id)
@@ -31,9 +31,9 @@ namespace Services
             return iProductRepository.GetProductById(id);
         }
 
-        public void SaveProduct(Product p)
+        public void SaveProduct(Product product)
         {
-          iProductRepository.SaveProduct(p);
+          iProductRepository.SaveProduct(product);
         }
 
         public void UpdateProduct(Product product)
