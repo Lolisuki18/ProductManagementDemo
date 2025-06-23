@@ -58,13 +58,16 @@
           Margin="4,4,4,63"
           SelectionChanged="dgData_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding ProductId}" />
-                    <DataGridTextColumn Header="Name" Binding="{Binding ProductName}" />
-                    <DataGridTextColumn Header="Price" Binding="{Binding UnitPrice}" />
-                    <DataGridTextColumn Header="Stock" Binding="{Binding UnitsInStock}" />
+                    <DataGridTextColumn Header="ProductId" Binding="{Binding ProductId}" />
+                    <DataGridTextColumn Header="ProductName" Binding="{Binding ProductName}" />
+                    <DataGridTextColumn Header="CategoryId" Binding="{Binding CategoryId}" />
+                    <DataGridTextColumn Header="UnitsInStock" Binding="{Binding UnitsInStock}" />
+                    <DataGridTextColumn Header="UnitPrice" Binding="{Binding UnitPrice}" />
                     <DataGridTextColumn Header="Category" Binding="{Binding Category.CategoryName}" />
-                </DataGrid.Columns> 
+            
+                </DataGrid.Columns>
             </DataGrid>
+
 
             <Button  x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="16,227,0,0" Grid.Row="6" Grid.RowSpan="2" Width="131"  Background="#FF0099FF" BorderBrush="White" Foreground="White" Grid.ColumnSpan="3" Click="btnCreate_Click" Grid.Column="1"/>
             <Button x:Name="btnUpdate" Content="Update" Grid.Column="3" HorizontalAlignment="Left" Margin="100,227,0,0" Grid.Row="6" Width="168" Background="#FF1B7140" Foreground="White" Grid.RowSpan="2" RenderTransformOrigin="0.37,0.2" Click="btnUpdate_Click"/>
